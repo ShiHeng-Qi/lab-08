@@ -12,6 +12,8 @@ class WizardTest {
 	@Before
 	fun setUp() {
 		evilWizard = Wizard("Evil Wizard", 30, 10)
+		no_mana_wizard = Wizard("I_have_no_mana", 0, 10)
+		with_mana_wizard = Wizard("I_have_some_mana", 10, 10)
 	}
 
 	@Test
@@ -45,5 +47,24 @@ class WizardTest {
 		evilWizard.restoreMana(40) // 30 + 40 = 70, so mana should be set to 70
 
 		assertEquals(70, evilWizard.mana)
+	}
+
+	@Test
+	fun train_not_enough_mana_case {
+		no_mana_wizard.train()
+		assertEquals(0, no_mana_wizard.mana)
+		assertEquals(10, no_mana_wizard.spellPower)
+	}
+
+	@Test
+	fun train_have_enough_mana_case {
+
+		with_mana_wizard.train()
+		assertEquals(5, with_mana_wizard.mana)
+		assertEquals(11, with_mana_wizard.spellPower)
+
+		with_mana_wizard.train()
+		assertEquals(0, with_mana_wizard.mana)
+		assertEquals(12, with_mana_wizard.spellPower)
 	}
 }
