@@ -50,14 +50,14 @@ class WizardTest {
 	}
 
 	@Test
-	fun train_not_enough_mana_case {
+	fun train_not_enough_mana_case() {
 		no_mana_wizard.train()
 		assertEquals(0, no_mana_wizard.mana)
 		assertEquals(10, no_mana_wizard.spellPower)
 	}
 
 	@Test
-	fun train_have_enough_mana_case {
+	fun train_have_enough_mana_case() {
 
 		with_mana_wizard.train()
 		assertEquals(5, with_mana_wizard.mana)
