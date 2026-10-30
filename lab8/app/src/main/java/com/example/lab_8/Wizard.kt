@@ -3,6 +3,7 @@ package com.example.lab_8
 class Wizard(val name: String, var mana: Int, var spellPower: Int) {
 	fun train()
 	{
+		/*
 		if(mana<5)
 		{
 			return
@@ -13,12 +14,13 @@ class Wizard(val name: String, var mana: Int, var spellPower: Int) {
 			spellPower += 1;
 			return
 		}
+		*/
 
 	}
 
 	fun restoreMana(amount: Int)
 	{
-		mana = minOf(100, mana+amount)
+		//mana = minOf(100, mana+amount)
 	}
 
 	fun castSpell(spell: String): Int {
