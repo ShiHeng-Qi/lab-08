@@ -7,6 +7,8 @@ import org.junit.Test
 
 class WizardTest {
 	private lateinit var evilWizard: Wizard
+	private lateinit var no_mana_wizard: Wizard
+	private lateinit var with_mana_wizard: Wizard
 
 	// Set up a new wizard before every single test
 	@Before
